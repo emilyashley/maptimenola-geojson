@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>toggle map</title>
+  
+  <script src='https://api.mapbox.com/mapbox.js/v2.2.4/mapbox.js'></script>
+  <link href='https://api.mapbox.com/mapbox.js/v2.2.4/mapbox.css' rel='stylesheet' />
+
+  <style>
+    html,
+    body {
+      height: 100%;
+      padding: 0;
+      margin: 0;
+    }
+    
+    #map {
+      height: 80%;
+      padding: 0;
+      margin: 0;
+    }
+    
+    #dashboard {
+      height: 30%;
+      padding: 25px;
+      margin: 0;
+      border-top: 2px solid #333;
+    }
+    
+    button {
+      margin-right: 10px;
+      font-family: "Proxima Nova W01", "Helvetica Neue", Helvetica, Arial, sans-serif;
+      background: transparent;
+    }
+    
+    p {
+      font-size: 17px;
+      margin-bottom: 10px;
+    }
+  </style>
+
+  <script src="http://code.jquery.com/jquery-1.10.2.js"></script>
+  <script src="http://code.jquery.com/ui/1.11.1/jquery-ui.js"></script>
+</head>
+
+<body>
+  <div id='map'></div>
+
+  <div id="dashboard">
+    <h3>Layer controls</h3>
+    <div id="buttons">
+      <button id="sublayer0"><span>Layer 1</span></button>
+      <button id="sublayer1"><span>Layer 2</span></button>
+    </div>
+
+
+  </div>
+  <script>
+    L.mapbox.accessToken = 'pk.eyJ1IjoidXM5MCIsImEiOiIxaEdIWC1FIn0.jHwgThvzukqbvOUlSBdrQw';
+    var map = L.mapbox.map('map', 'mapbox.streets');
+
+
+    var nolaPlaces = L.mapbox.featureLayer()
+      .loadURL('nolaplaces.geojson')
+      .on('ready', function() {
+        map.fitBounds(nolaPlaces.getBounds());
+      })
+      .addTo(map);
+
+    var myLayer = L.mapbox.featureLayer()
+      .loadURL('mydata.geojson')
+      .addTo(map);
+
+
+    var sublayers = [nolaPlaces, myLayer];
+
+
+    var sublayer0Shown = true;
+    $("#sublayer0").on('click', function() {
+      if (sublayer0Shown) {
+        map.removeLayer(nolaPlaces);;
+      }
+      else {
+        nolaPlaces.addTo(map);;
+      }
+      sublayer0Shown = !sublayer0Shown;
+    });
+
+
+    var sublayer1Shown = true;
+    $("#sublayer1").on('click', function() {
+      if (sublayer1Shown) {
+        map.removeLayer(sublayers[1]);;
+      }
+      else {
+        sublayers[1].addTo(map);;
+      }
+      sublayer1Shown = !sublayer1Shown;
+    });
+  </script>
+</body>
+
+</html>

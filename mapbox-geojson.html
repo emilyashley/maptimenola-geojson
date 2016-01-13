@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  
+    <title>A simple map</title>
+    
+    <script src='https://api.mapbox.com/mapbox.js/v2.2.4/mapbox.js'></script>
+    <link href='https://api.mapbox.com/mapbox.js/v2.2.4/mapbox.css' rel='stylesheet' />
+  
+    <style>
+      body { margin:0; padding:0; }
+      #map { position:absolute; top:0; bottom:0; width:100%; }
+    
+    </style>
+  </head>
+
+<body>
+
+  <div id='map'></div>
+
+  <script>
+    L.mapbox.accessToken = 'pk.eyJ1IjoidXM5MCIsImEiOiIxaEdIWC1FIn0.jHwgThvzukqbvOUlSBdrQw';
+    var map = L.mapbox.map('map', 'mapbox.streets');
+        //.setView([29.995, -90], 10);
+  
+    var nolaPlaces = L.mapbox.featureLayer()
+      .loadURL('nolaplaces.geojson')
+      .on('ready', function() {
+        map.fitBounds(nolaPlaces.getBounds());
+        
+      })
+      .addTo(map);
+      
+</script>
+</body>
+</html>
