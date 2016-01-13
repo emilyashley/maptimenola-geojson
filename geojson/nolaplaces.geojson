@@ -1,0 +1,47 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "LaunchPad",
+        "Address": "643 Magazine Street"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -90.06917953491211,
+          29.947200258869486
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Couturie Forest",
+        "Address": "City Park"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -90.09412139654158,
+          30.002753864115295
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Doullut Steamboat House",
+        "Address": "400 Egania Street"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -90.02186000347137,
+          29.95597565824114
+        ]
+      }
+    }
+  ]
+}
