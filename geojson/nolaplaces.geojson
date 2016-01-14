@@ -42,6 +42,20 @@
           29.95597565824114
         ]
       }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "thingie",
+        "Address": "mabob"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -90.06772041320801,
+          29.973598484592895
+        ]
+      }
     }
   ]
 }
