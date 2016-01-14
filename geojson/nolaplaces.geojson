@@ -42,6 +42,20 @@
           29.95597565824114
         ]
       }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Convention Center",
+        "Address": "900 Convention Center Blvd."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -90.0645661354065,
+          29.94247758361974
+        ]
+      }
     }
   ]
 }
