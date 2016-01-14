@@ -56,6 +56,20 @@
           29.973598484592895
         ]
       }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "dohickie ",
+        "Address": "here"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -90.0714111328125,
+          29.978356855353777
+        ]
+      }
     }
   ]
 }
