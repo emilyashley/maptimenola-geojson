@@ -1,33 +1,30 @@
 <!DOCTYPE html>
 <html>
-<head>
-<title>
-Google Fusion Tables map
-</title>
-<script type="text/javascript" 
-   src="http://maps.googleapis.com/maps/api/js?key=AIzaSyD3fhV0faMQcoK7voyJFuJsu5La9OFAqkI&sensor=false">
-</script>
-<script type="text/javascript"> 
-   function initialize() { 
-      var latlng = new google.maps.LatLng(90, -29); 
-      var myOptions = { 
-         zoom: 4, 
-         center: latlng, 
-         mapTypeId: google.maps.MapTypeId.ROADMAP 
-      }; 
-      var map = new google.maps.Map(document.getElementById("map_canvas"), myOptions);
-      var layer;     
-      var tableid = '1vN_SMVHc3J3GwdYsgba9jpCGC_wwdiwuEWrOhD2u';     
-      
-      layer = new google.maps.FusionTablesLayer({       
-         query: {         
-            select: 'Name',         
-            from: tableid       
-         },     
-      });     
-      layer.setMap(map); 
-   } 
-</script> 
+  <head>
+    <style type="text/css">
+      html, body { height: 100%; margin: 0; padding: 0; }
+      #map { height: 100%; }
+    </style>
+  </head>
+  <body>
+    <div id="map"></div>
+    <script type="text/javascript">
+
+var map;
+function initMap() {
+  map = new google.maps.Map(document.getElementById('map'), {
+    center: {lat: -34.397, lng: 150.644},
+    zoom: 8
+  });
+}
+
+    </script>
+    <script async defer
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD3fhV0faMQcoK7voyJFuJsu5La9OFAqkI
+ Done&callback=initMap">
+    </script>
+  </body>
+</html>
 </head> 
 <body onload="initialize()"> 
    <!-- Add your own text between these comments --> 
